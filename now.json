@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "github": {
+    "enabled": false
+  },
+  "builds": [
+    { "src": "src/nodejs/*.ts", "use": "@now/node" },
+    { "src": "src/python/*.py", "use": "@now/python", "config": { "maxLambdaSize": "10mb" } }
+  ],
+  "routes": [
+    { "src": "src/nodejs/(.*)", "dest": "src/nodejs/$1.ts" },
+    { "src": "src/python/(.*)", "dest": "src/python/$1.py" }
+  ]
+}

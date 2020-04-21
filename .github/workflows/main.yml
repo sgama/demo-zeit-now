@@ -1,0 +1,29 @@
+# name: Build Pipeline
+
+# on:
+#   push:
+#     branches:
+#       - master
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: 13
+#       - run: now dev -t $ZEIT_TOKEN &
+#         env:
+#           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+#           NOW_ORG_ID: ${{ secrets.ORG_ID }}
+#           NOW_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+#       - run: npm install
+#       - run: sleep 5
+#       - run: npm test
+#       - run: now --prod --token $ZEIT_TOKEN
+#         env:
+#           ZEIT_TOKEN: ${{ secrets.ZEIT_TOKEN }}
+#           NOW_ORG_ID: ${{ secrets.ORG_ID }}
+#           NOW_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+ 
